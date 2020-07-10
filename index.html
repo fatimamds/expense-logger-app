@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>    <!-- HTML5 document tag -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- responsive viewport meta tag; to ensure proper rendering and touch zooming for all devices. '.' Bootstrap is developed mobile-first, so code is first optimized for mobile devices and then scaled up for other devices using CSS media queries -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- To add trash icon for "delete" button in the table -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
+    <title>My Expense App</title>
+  </head>
+  <body>
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg"> <!-- We use the class navbar-dark for white font, and navbar-light for dark font. Giving bg-dark means a dark gray background color; bg-primary would mean a bright blue color. -->
+        <a class="navbar-brand mb-0 h1" href="#">Expense Logger</a> <!-- We use the class h1 for displaying text in h1 font; and mb-0 means bottom margin = 0. -->
+        
+        <!--Toggle button for smaller screens-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--Dropdown menu for displaying "About Developer"-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">About Developer</a>
+              <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;">
+                <p style="text-align: center" class="h6">Hi I'm Fatima!</p>
+                <div class="dropdown-divider"></div>
+                <p style="text-align: center" class="mb-0"> Find me on twitter <a href="https://twitter.com/fatimamds99">here</a>.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+      <div class="container-fluid bg-light" style="min-height: 100vh"> <!-- Fluid container fills the entire width of the viewport-screen, i.e. the background. It doesn't fill the height however, so we must give height specification (vh means window-height% & vw means window-width%). Giving bg-light means a light gray background color. -->
+        <div class="container" style="padding-top: 30px"> <!-- fixed-width container, which serves the purpose of providing margin to child elements-->
+            <!--This container has only two children: 1. Jumbotron (main app) 2. List Group (for displaying expenses) -->
+
+            <div class="jumbotron"> <!-- First child: Jumbotron -->
+                <!-- "Enter Amount Section" -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">₹</span>
+                    </div>
+
+                    <input type="text reset" id="inputAmount" placeholder="Enter amount" class="form-control">
+
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                </div>
+
+                <!-- "Enter Description" & "Add" Button Section -->
+                <div class="input-group mb-3"> <!--mb-3 means bottom margin = 3 -->
+                    <div class="input-group-append">
+                        <span class="input-group-text">@</span>
+                    </div>
+
+                    <input type="text" id="inputDesc" placeholder="Enter description" class="form-control">
+
+                    <div class="input-group-append">
+                        <button id="btnAddExpense" class="btn btn-outline-primary">Add</button>
+                    </div>
+                </div>
+
+                <!-- "Total Expense" Display & Notes Section -->
+                <h3 id="headingTotal" style="text-align: center"></h3> <!-- To display total expense amount -->
+                <hr class="my-4">
+                <p class="lead" style="text-align: center">Enter the amount of money you spent and where you spent it, to track your total expenditure.</p>
+            </div> <!--end of jumbotron-->
+
+            <ul id="table" class="list-group" style="padding-bottom: 30px"></ul> <!-- Second Child: List Group (table from our JS file for printing transactions) -->
+        </div> <!--end of container-->
+
+        <footer style="text-align: center">
+          <hr />
+          <p>
+            <a style="color: rgb(82, 82, 82)" href="https://twitter.com/fatimamds99">Twitter</a> • 
+            <a style="color: rgb(82, 82, 82)" href="https://www.linkedin.com/in/fatimamds/"> LinkedIn</a> • 
+            <a style="color: rgb(82, 82, 82)" href="https://github.com/fatimamds"> GitHub </a>
+          </p>
+        </footer>
+      </div> <!--end of container-fluid-->
+
+
+      <!-- JavaScript defined by me for the webpage functionality -->
+      <script src="test.js"></script> 
+
+      <!-- Additional JavaScript from Bootstrap for working of Navbar dropdown "About Developer". It includes jQuery and Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
